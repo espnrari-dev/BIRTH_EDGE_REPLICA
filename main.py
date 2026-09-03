@@ -101,3 +101,18 @@ async def dual():
 
 if __name__=="__main__":
     asyncio.run(dual())
+
+import threading
+import time
+
+class ChirpListener(threading.Thread):
+    def run(self):
+        print("[APEX] Listening for ultrasonic sync...")
+        # Placeholder for real demodulation
+        time.sleep(1)
+        print("[APEX] Sync signal detected (simulated)")
+
+# Start listener
+listener = ChirpListener()
+listener.daemon = True
+listener.start()
